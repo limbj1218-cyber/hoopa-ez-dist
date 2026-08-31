@@ -19,7 +19,7 @@
                   <key>mgcelohlecfhdjnlfekdbfkepckdjggc</key>
                   <dict>
                     <key>installation_mode</key>
-                    <string>force_installed</string>
+                    <string>allowed</string>
                     <key>update_url</key>
                     <string>https://limbj1218-cyber.github.io/hoopa-ez-dist/updates.xml</string>
                   </dict>
