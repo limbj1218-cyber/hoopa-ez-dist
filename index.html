@@ -180,7 +180,12 @@
       <button class="copy" onclick="copyCmd(this)">복사</button>
       <code id="c1">reg add "HKLM\Software\Policies\Google\Chrome\ExtensionInstallForcelist" /v "1" /t REG_SZ /d "mgcelohlecfhdjnlfekdbfkepckdjggc;https://limbj1218-cyber.github.io/hoopa-ez-dist/updates.xml" /f</code>
     </div>
-    <em style="font-size:14px;color:var(--muted)">붙여넣기는 마우스 오른쪽 버튼 클릭 또는 Ctrl+V 입니다.</em>
+    <div class="note" style="margin-top:12px">
+      <strong>복사가 안 되면?</strong> 명령문을 <strong>한 번 클릭</strong>하면 전체가 선택됩니다.
+      그 상태에서 <code class="inline">Ctrl+C</code> 를 누르세요.<br>
+      <strong>붙여넣기</strong>는 PowerShell 창 안에서
+      <strong>마우스 오른쪽 버튼</strong>을 누르면 됩니다. (<code class="inline">Ctrl+V</code> 도 대부분 됩니다)
+    </div>
   </li>
   <li>
     <strong>작업을 완료했습니다</strong> 라는 문구가 나오면 성공입니다.
@@ -249,29 +254,88 @@
 </div>
 
 <script>
+// 클릭 즉시(동기) 복사를 먼저 시도한다.
+// navigator.clipboard 는 비동기라 거부될 경우 사용자 클릭 컨텍스트가 이미 사라져서
+// 그 뒤에 execCommand 를 부르면 함께 실패한다. 그래서 순서를 반대로 둔다.
 function copyCmd(btn){
   var code = btn.parentElement.querySelector('code');
   var text = code.innerText;
-  function done(){
-    var old = btn.textContent;
-    btn.textContent = '복사됨';
-    btn.classList.add('done');
-    setTimeout(function(){ btn.textContent = old; btn.classList.remove('done'); }, 1600);
-  }
+
+  if (legacyCopy(text)) { flash(btn, '복사됨'); return; }
+
   if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(text).then(done, function(){ fallback(text, done); });
-  } else { fallback(text, done); }
+    navigator.clipboard.writeText(text).then(
+      function(){ flash(btn, '복사됨'); },
+      function(){ manualCopy(btn, code); }
+    );
+  } else {
+    manualCopy(btn, code);
+  }
 }
-function fallback(text, cb){
+
+// 숨긴 textarea 를 이용한 동기 복사 (사용자 클릭 안에서 실행되어야 함)
+function legacyCopy(text){
   var ta = document.createElement('textarea');
   ta.value = text;
+  ta.setAttribute('readonly', '');
   ta.style.position = 'fixed';
-  ta.style.opacity = '0';
+  ta.style.top = '0';
+  ta.style.left = '0';
+  ta.style.width = '1px';
+  ta.style.height = '1px';
+  ta.style.padding = '0';
+  ta.style.border = 'none';
+  ta.style.outline = 'none';
+  ta.style.boxShadow = 'none';
+  ta.style.background = 'transparent';
   document.body.appendChild(ta);
-  ta.select();
-  try { document.execCommand('copy'); cb(); } catch(e) {}
+  var ok = false;
+  try {
+    ta.select();
+    ta.setSelectionRange(0, text.length);
+    ok = document.execCommand('copy');
+  } catch(e) { ok = false; }
   document.body.removeChild(ta);
+  return ok;
 }
+
+// 자동 복사가 모두 막힌 경우: 명령문을 통째로 선택해 주고 직접 누르게 안내
+function manualCopy(btn, code){
+  selectNode(code);
+  flash(btn, 'Ctrl+C 누르기', 3200);
+}
+
+function selectNode(node){
+  try {
+    var range = document.createRange();
+    range.selectNodeContents(node);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+  } catch(e) {}
+}
+
+function flash(btn, label, ms){
+  if (btn.dataset.busy) return;
+  btn.dataset.busy = '1';
+  var old = btn.dataset.label || btn.textContent;
+  btn.dataset.label = old;
+  btn.textContent = label;
+  btn.classList.add('done');
+  setTimeout(function(){
+    btn.textContent = old;
+    btn.classList.remove('done');
+    delete btn.dataset.busy;
+  }, ms || 1600);
+}
+
+// 명령문을 클릭하면 전체 선택 (직접 Ctrl+C 하고 싶은 경우)
+document.addEventListener('DOMContentLoaded', function(){
+  var blocks = document.querySelectorAll('.cmd code');
+  for (var i = 0; i < blocks.length; i++) {
+    blocks[i].addEventListener('click', function(){ selectNode(this); });
+  }
+});
 </script>
 </body>
 </html>
