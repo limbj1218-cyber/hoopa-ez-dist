@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>PayloadContent</key>
+  <array>
+    <dict>
+      <key>PayloadContent</key>
+      <dict>
+        <key>com.google.Chrome</key>
+        <dict>
+          <key>Forced</key>
+          <array>
+            <dict>
+              <key>mcx_preference_settings</key>
+              <dict>
+                <key>ExtensionSettings</key>
+                <dict>
+                  <key>mgcelohlecfhdjnlfekdbfkepckdjggc</key>
+                  <dict>
+                    <key>installation_mode</key>
+                    <string>force_installed</string>
+                    <key>update_url</key>
+                    <string>https://limbj1218-cyber.github.io/hoopa-ez-dist/updates.xml</string>
+                  </dict>
+                </dict>
+              </dict>
+            </dict>
+          </array>
+        </dict>
+      </dict>
+      <key>PayloadEnabled</key>
+      <true/>
+      <key>PayloadIdentifier</key>
+      <string>ai.hoopa.ezworker.chrome.policy</string>
+      <key>PayloadType</key>
+      <string>com.apple.ManagedClient.preferences</string>
+      <key>PayloadUUID</key>
+      <string>BADBB1A5-CDCB-44CC-9F84-9BC2D51AFB21</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>PayloadDisplayName</key>
+      <string>후파의 이지워커 시즌2 - 크롬 확장 설치 정책</string>
+    </dict>
+  </array>
+  <key>PayloadDisplayName</key>
+  <string>후파의 이지워커 시즌2</string>
+  <key>PayloadIdentifier</key>
+  <string>ai.hoopa.ezworker.profile</string>
+  <key>PayloadOrganization</key>
+  <string>후파</string>
+  <key>PayloadRemovalDisallowed</key>
+  <false/>
+  <key>PayloadScope</key>
+  <string>User</string>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadUUID</key>
+  <string>F0D1402C-E09F-443B-AB3F-2B3513162CAD</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+</dict>
+</plist>
