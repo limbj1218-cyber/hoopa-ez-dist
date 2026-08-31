@@ -101,6 +101,12 @@
 
 <h2>Windows 설치</h2>
 
+<div class="warn" style="font-size:15.5px">
+  <strong>시작하기 전에 — 크롬을 완전히 종료해 주세요.</strong><br>
+  크롬이 켜져 있으면 설정이 반영되지 않아 설치가 실패합니다.
+  창을 모두 닫으신 뒤 아래 순서대로 진행해 주세요.
+</div>
+
 <ol class="steps">
   <li>
     키보드에서 <code class="inline">Windows 키</code>를 누르고 <strong>powershell</strong> 이라고 입력하세요.
@@ -195,7 +201,11 @@
   </li>
   <li>
     <strong>크롬을 완전히 종료했다가 다시 켜주세요.</strong>
-    (창을 모두 닫아야 합니다)
+    <div class="note">
+      창을 모두 닫아도 크롬이 백그라운드에 남아있는 경우가 있습니다.
+      확실히 하시려면 <strong>작업 관리자</strong>에서 종료해 주세요 &mdash;
+      아래 <a href="#trouble"><strong>설치가 안 될 때</strong></a> 항목에 방법이 있습니다.
+    </div>
   </li>
   <li>
     아래 파일을 내려받아 <strong>압축을 풀어주세요.</strong>
@@ -231,6 +241,42 @@
 <div class="warn">
   3번 명령을 건너뛰고 파일만 설치하면, 크롬이 보안상 확장 프로그램을
   <strong>자동으로 꺼버립니다.</strong> 순서대로 진행해 주세요.
+</div>
+
+<h2 id="trouble">설치가 안 될 때</h2>
+<p>
+  명령도 실행하고 파일도 끌어다 놓았는데 확장 프로그램이 나타나지 않는다면,
+  <strong>크롬이 완전히 종료되지 않은 것</strong>이 가장 흔한 원인입니다.
+  창을 모두 닫아도 <strong>백그라운드에 남아 계속 실행되는 경우</strong>가 있습니다.
+</p>
+
+<ol class="steps">
+  <li>
+    키보드에서 <code class="inline">Ctrl</code> + <code class="inline">Shift</code> +
+    <code class="inline">Esc</code> 를 눌러 <strong>작업 관리자</strong>를 엽니다.
+  </li>
+  <li>
+    <strong>프로세스</strong> 탭에서 <strong>Google Chrome</strong> 을 찾습니다.
+    <div class="note">
+      이름 옆에 <strong>(18)</strong> 처럼 숫자가 붙어 있으면 그만큼의 크롬이
+      아직 실행 중이라는 뜻입니다.
+    </div>
+  </li>
+  <li>
+    <strong>Google Chrome</strong> 위에서 <strong>마우스 오른쪽 버튼</strong>을 누르고
+    <strong>&ldquo;작업 끝내기&rdquo;</strong> 를 선택합니다.
+  </li>
+  <li>
+    목록에서 <strong>Google Chrome 이 완전히 사라졌는지</strong> 확인합니다.
+  </li>
+  <li>
+    <strong>1번(PowerShell 명령)부터 다시 진행</strong>해 주세요.
+  </li>
+</ol>
+
+<div class="warn">
+  작업 끝내기를 하면 <strong>열려 있던 크롬 탭이 모두 닫힙니다.</strong>
+  저장하지 않은 작업이 있다면 먼저 정리해 주세요.
 </div>
 
 <h2>macOS 설치</h2>
