@@ -79,6 +79,8 @@
   .s-arrow{fill:none;stroke:#ea580c;stroke-width:2.4;stroke-linecap:round}
   .s-arrow-head{fill:#ea580c}
   .s-callout{fill:#ea580c;font-size:13px;font-weight:700;font-family:inherit}
+  .tm-line{stroke:var(--line);stroke-width:1}
+  .tm-hint{fill:var(--muted);font-size:11px;font-family:inherit}
   .dl{display:inline-block;background:var(--brand);color:#fff !important;text-decoration:none;
     padding:12px 22px;border-radius:10px;font-weight:700;font-size:15px}
   .dl:hover{opacity:.9}
@@ -265,6 +267,62 @@
   <li>
     <strong>Google Chrome</strong> 위에서 <strong>마우스 오른쪽 버튼</strong>을 누르고
     <strong>&ldquo;작업 끝내기&rdquo;</strong> 를 선택합니다.
+
+    <div class="figure">
+      <svg viewBox="0 0 720 290" role="img" aria-label="작업 관리자에서 Google Chrome을 오른쪽 클릭해 작업 끝내기를 선택하는 화면">
+        <!-- 창 -->
+        <rect x="8" y="8" width="440" height="274" rx="10" class="s-panel"/>
+        <text x="26" y="34" class="s-label">작업 관리자 · 프로세스</text>
+        <!-- 헤더 -->
+        <line x1="20" y1="46" x2="436" y2="46" class="tm-line"/>
+        <text x="26" y="62" class="s-label">이름</text>
+        <text x="300" y="62" class="s-label">CPU</text>
+        <text x="370" y="62" class="s-label">메모리</text>
+        <line x1="20" y1="72" x2="436" y2="72" class="tm-line"/>
+        <!-- 행들 -->
+        <text x="40" y="96" class="s-dim">Claude (13)</text>
+        <text x="300" y="96" class="s-dim">0.1%</text>
+        <text x="370" y="96" class="s-dim">892MB</text>
+
+        <rect x="20" y="108" width="416" height="30" rx="6" class="s-row-active"/>
+        <text x="40" y="128" class="s-title">Google Chrome (18)</text>
+        <text x="300" y="128" class="s-dim">0.4%</text>
+        <text x="370" y="128" class="s-dim">750MB</text>
+
+        <text x="40" y="164" class="s-dim">KakaoTalk (10)</text>
+        <text x="300" y="164" class="s-dim">0%</text>
+        <text x="370" y="164" class="s-dim">547MB</text>
+        <text x="40" y="192" class="s-dim">Microsoft Edge</text>
+        <text x="300" y="192" class="s-dim">0%</text>
+        <text x="370" y="192" class="s-dim">476MB</text>
+        <text x="40" y="220" class="s-dim">Windows 탐색기</text>
+        <text x="300" y="220" class="s-dim">0.1%</text>
+        <text x="370" y="220" class="s-dim">228MB</text>
+
+        <text x="26" y="262" class="tm-hint">이름 옆 숫자 = 실행 중인 크롬 개수</text>
+
+        <!-- 오른쪽 클릭 메뉴 -->
+        <rect x="466" y="96" width="238" height="150" rx="9" class="s-menu"/>
+        <text x="486" y="120" class="s-menu-text">확장(P)</text>
+        <rect x="472" y="132" width="226" height="32" rx="7" class="s-menu-hit"/>
+        <text x="486" y="153" class="s-menu-hit-text">작업 끝내기(E)</text>
+        <text x="486" y="188" class="s-menu-text">리소스 값(V)</text>
+        <text x="486" y="220" class="s-menu-text">피드백 제공(B)</text>
+
+        <!-- 화살표 -->
+        <path d="M690 190 C 712 186, 716 165, 706 152" class="s-arrow" marker-end="url(#ah2)"/>
+        <defs>
+          <marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5"
+                  markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" class="s-arrow-head"/>
+          </marker>
+        </defs>
+        <text x="612" y="212" class="s-callout">이것을 클릭</text>
+      </svg>
+      <div class="figure-cap">
+        <strong>Google Chrome</strong> 을 오른쪽 클릭하면 위와 같은 메뉴가 나옵니다.
+      </div>
+    </div>
   </li>
   <li>
     목록에서 <strong>Google Chrome 이 완전히 사라졌는지</strong> 확인합니다.
