@@ -53,6 +53,32 @@
   footer{margin-top:52px;padding-top:20px;border-top:1px solid var(--line);
     color:var(--muted);font-size:13px}
   a{color:var(--brand)}
+
+  /* --- 설치 화면 그림 --- */
+  .figure{margin:18px 0 6px;border:1px solid var(--line);border-radius:14px;
+    background:var(--card);padding:16px 16px 12px;overflow-x:auto}
+  .figure svg{display:block;width:100%;min-width:560px;height:auto}
+  .figure-cap{margin-top:10px;font-size:13.5px;color:var(--muted);text-align:center}
+  .s-panel{fill:var(--card);stroke:var(--line);stroke-width:1.5}
+  .s-search{fill:var(--brand-soft);stroke:var(--line);stroke-width:1}
+  .s-icon-line{fill:none;stroke:var(--muted);stroke-width:1.6;stroke-linecap:round}
+  .s-typed{fill:var(--ink);font-size:13px;font-family:inherit}
+  .s-label{fill:var(--muted);font-size:11px;font-weight:700;font-family:inherit}
+  .s-row-active{fill:var(--brand-soft);stroke:var(--brand);stroke-width:1.5}
+  .s-ps{fill:#2b6cb0}
+  .s-ps-dim{fill:#2b6cb0;opacity:.45}
+  .s-ps-glyph{fill:#fff;font-size:13px;font-weight:700;font-family:ui-monospace,Consolas,monospace}
+  .s-title{fill:var(--ink);font-size:13.5px;font-weight:700;font-family:inherit}
+  .s-sub{fill:var(--muted);font-size:11.5px;font-family:inherit}
+  .s-dim{fill:var(--muted);font-size:12px;font-family:inherit}
+  .s-menu{fill:var(--card);stroke:var(--line);stroke-width:1.5}
+  .s-menu-hit{fill:var(--brand)}
+  .s-menu-hit-text{fill:#fff;font-size:13px;font-weight:700;font-family:inherit}
+  .s-menu-text{fill:var(--ink);font-size:13px;font-family:inherit}
+  .s-shield{fill:#fff}
+  .s-arrow{fill:none;stroke:#ea580c;stroke-width:2.4;stroke-linecap:round}
+  .s-arrow-head{fill:#ea580c}
+  .s-callout{fill:#ea580c;font-size:13px;font-weight:700;font-family:inherit}
 </style>
 </head>
 <body>
@@ -77,10 +103,75 @@
     키보드에서 <code class="inline">Windows 키</code>를 누르고 <strong>powershell</strong> 이라고 입력하세요.
   </li>
   <li>
-    <strong>Windows PowerShell</strong> 위에서 <strong>마우스 오른쪽 버튼</strong>을 누르고
-    <strong>&ldquo;관리자 권한으로 실행&rdquo;</strong>을 선택하세요.
+    검색 결과에 나온 <strong>Windows PowerShell</strong> 을
+    <strong>관리자 권한으로 실행</strong>합니다. 아래 두 가지 방법 중 편한 쪽을 쓰시면 됩니다.
+
+    <div class="figure">
+      <svg viewBox="0 0 720 300" role="img" aria-label="윈도우 검색 결과에서 관리자 권한으로 실행을 선택하는 화면">
+        <!-- 검색 패널 -->
+        <rect x="8" y="8" width="380" height="284" rx="12" class="s-panel"/>
+        <!-- 검색창 -->
+        <rect x="24" y="24" width="348" height="34" rx="17" class="s-search"/>
+        <circle cx="46" cy="41" r="6" class="s-icon-line"/>
+        <line x1="50" y1="45" x2="55" y2="50" class="s-icon-line"/>
+        <text x="66" y="46" class="s-typed">powershell</text>
+        <!-- 최고의 매치 -->
+        <text x="26" y="84" class="s-label">최고의 매치</text>
+        <rect x="24" y="94" width="348" height="52" rx="8" class="s-row-active"/>
+        <rect x="36" y="106" width="28" height="28" rx="5" class="s-ps"/>
+        <text x="43" y="125" class="s-ps-glyph">&gt;_</text>
+        <text x="76" y="116" class="s-title">Windows PowerShell</text>
+        <text x="76" y="133" class="s-sub">시스템</text>
+        <!-- 앱 목록 -->
+        <text x="26" y="172" class="s-label">앱</text>
+        <rect x="36" y="184" width="22" height="22" rx="4" class="s-ps-dim"/>
+        <text x="68" y="200" class="s-dim">Windows PowerShell ISE</text>
+        <rect x="36" y="216" width="22" height="22" rx="4" class="s-ps-dim"/>
+        <text x="68" y="232" class="s-dim">Windows PowerShell (x86)</text>
+
+        <!-- 오른쪽 메뉴 -->
+        <rect x="404" y="60" width="300" height="150" rx="10" class="s-menu"/>
+        <rect x="410" y="66" width="288" height="34" rx="7" class="s-menu-hit"/>
+        <path d="M424 76 l7 -4 l7 4 v6 c0 5 -3 8 -7 10 c-4 -2 -7 -5 -7 -10 z" class="s-shield"/>
+        <text x="448" y="88" class="s-menu-hit-text">관리자 권한으로 실행</text>
+        <text x="448" y="124" class="s-menu-text">파일 위치 열기</text>
+        <text x="448" y="156" class="s-menu-text">시작 화면에 고정</text>
+        <text x="448" y="188" class="s-menu-text">작업 표시줄에 고정</text>
+
+        <!-- 화살표 -->
+        <path d="M636 120 C 660 120, 668 100, 664 90" class="s-arrow" marker-end="url(#ah)"/>
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5"
+                  markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" class="s-arrow-head"/>
+          </marker>
+        </defs>
+        <text x="600" y="142" class="s-callout">이것을 클릭</text>
+      </svg>
+      <div class="figure-cap">
+        목록에서 <strong>마우스 오른쪽 버튼</strong>을 누르면 위와 같은 메뉴가 나옵니다.
+      </div>
+    </div>
+
+    <h3 style="margin-top:22px">방법 A — 마우스 오른쪽 버튼</h3>
+    <p style="margin:6px 0 0">
+      <strong>Windows PowerShell</strong> 위에서 마우스 오른쪽 버튼을 누른 뒤
+      <strong>&ldquo;관리자 권한으로 실행&rdquo;</strong>을 선택합니다.
+    </p>
+
+    <h3>방법 B — 오른쪽 패널</h3>
+    <p style="margin:6px 0 0">
+      검색 결과 오른쪽에 설명 패널이 함께 나오는 경우, 거기 있는
+      <strong>&ldquo;관리자로 실행&rdquo;</strong>을 눌러도 똑같습니다.
+    </p>
+
     <div class="warn">
-      반드시 <strong>관리자 권한</strong>으로 실행해야 합니다. 그냥 실행하면 아래 명령이 실패합니다.
+      반드시 <strong>관리자 권한</strong>으로 실행해야 합니다. 그냥 <strong>열기</strong>로 실행하면
+      아래 명령이 <strong>&ldquo;액세스가 거부되었습니다&rdquo;</strong> 오류로 실패합니다.
+    </div>
+    <div class="note" style="margin-top:12px">
+      실행하면 <strong>&ldquo;이 앱이 디바이스를 변경할 수 있도록 허용하시겠어요?&rdquo;</strong> 창이 뜹니다.
+      <strong>예</strong>를 눌러주세요. 창 제목에 <strong>관리자</strong> 라고 표시되면 제대로 실행된 것입니다.
     </div>
   </li>
   <li>
@@ -120,6 +211,21 @@
 </p>
 <p style="font-size:14px;color:var(--muted)">
   설치 후 크롬을 재시작하면 Windows와 동일하게 자동 설치·자동 업데이트됩니다.
+</p>
+
+<h2>크롬 계정이 여러 개인 경우</h2>
+<div class="note">
+  <strong>따로 하실 일이 없습니다.</strong> 이 설정은 크롬 계정별이 아니라
+  <strong>컴퓨터 전체에 적용</strong>되기 때문에, 크롬에 로그인된 계정(프로필)이 몇 개든
+  <strong>모든 프로필에 자동으로 설치</strong>됩니다.
+</div>
+<p>
+  회사용·개인용 프로필을 나눠 쓰시더라도 각각에서 바로 사용하실 수 있습니다.
+  프로필을 새로 추가하셔도 마찬가지로 자동 설치됩니다.
+</p>
+<p style="font-size:14px;color:var(--muted)">
+  참고로 특정 프로필에만 설치되게 하거나 특정 프로필에서만 빼는 것은 이 방식으로는 불가능합니다.
+  꼭 필요하시면 해당 프로필에서 확장 프로그램을 사용하지 않으시면 됩니다.
 </p>
 
 <h2>확인 방법</h2>
