@@ -87,6 +87,10 @@
   .tg-on{fill:#1a73e8}
   .tg-knob{fill:#fff}
   .tg-ok{fill:#16a34a;font-size:13px;font-weight:700;font-family:inherit}
+  .tg-ring{fill:none;stroke:#ec4899;stroke-width:4}
+  .tg-btn{fill:none;stroke:#c7d2e8;stroke-width:1.5}
+  .tg-btn-text{fill:#1a73e8;font-size:13px;font-family:inherit}
+  .tg-reload{fill:none;stroke:#5f6368;stroke-width:2;stroke-linecap:round}
   .tm-hint{fill:var(--muted);font-size:11px;font-family:inherit}
   .dl{display:inline-block;background:var(--brand);color:#fff !important;text-decoration:none;
     padding:12px 22px;border-radius:10px;font-weight:700;font-size:15px}
@@ -153,37 +157,50 @@
     </div>
 
     <div class="figure">
-      <svg viewBox="0 0 620 190" role="img" aria-label="확장 프로그램 카드의 토글 스위치를 켜는 화면">
-        <rect x="8" y="8" width="604" height="174" rx="12" class="s-panel"/>
-        <rect x="34" y="40" width="44" height="44" rx="10" class="tg-icon"/>
-        <text x="44" y="70" class="tg-glyph">후</text>
-        <text x="98" y="56" class="s-title">후파의 이지워커 시즌2</text>
-        <text x="98" y="76" class="s-sub">튜브워커 스토리보드 추출 · 그록 영상 일괄 변환</text>
+      <svg viewBox="0 0 620 240" role="img" aria-label="확장 프로그램 카드 오른쪽 아래의 토글 스위치를 켜는 화면">
+        <!-- 확장 프로그램 카드 -->
+        <rect x="10" y="10" width="600" height="220" rx="14" class="s-panel"/>
 
-        <!-- 꺼짐 -->
-        <text x="98" y="128" class="tg-cap">지금 (꺼짐)</text>
-        <rect x="98" y="138" width="46" height="24" rx="12" class="tg-off"/>
-        <circle cx="110" cy="150" r="9" class="tg-knob"/>
+        <!-- 아이콘 -->
+        <rect x="42" y="40" width="46" height="46" rx="11" class="tg-icon"/>
+        <text x="52" y="72" class="tg-glyph">후</text>
 
-        <!-- 화살표 -->
-        <path d="M172 150 L 236 150" class="s-arrow" marker-end="url(#ah3)"/>
+        <!-- 제목 / 설명 -->
+        <text x="112" y="56" class="s-title">후파의 이지워커 시즌2</text>
+        <text x="292" y="56" class="s-dim">5.2.7</text>
+        <text x="112" y="79" class="s-sub">튜브워커 스토리보드 추출/씬 업로드 + 그록 이미지네</text>
+        <text x="112" y="97" class="s-sub">영상 일괄 변환 (올인원)</text>
+        <text x="112" y="128" class="tg-cap">ID: mgcelohlecfhdjnlfekdbfkepckdjggc</text>
+
+        <!-- 하단 버튼 -->
+        <rect x="42" y="168" width="92" height="34" rx="17" class="tg-btn"/>
+        <text x="60" y="190" class="tg-btn-text">세부정보</text>
+        <rect x="148" y="168" width="72" height="34" rx="17" class="tg-btn"/>
+        <text x="170" y="190" class="tg-btn-text">삭제</text>
+
+        <!-- 새로고침 아이콘 -->
+        <path d="M474 178 a10 10 0 1 0 4 -8" class="tg-reload"/>
+        <path d="M478 162 l0 9 l-9 0" class="tg-reload"/>
+
+        <!-- 토글 (켜짐) -->
+        <rect x="510" y="173" width="52" height="26" rx="13" class="tg-on"/>
+        <circle cx="549" cy="186" r="10" class="tg-knob"/>
+
+        <!-- 분홍 강조 -->
+        <ellipse cx="518" cy="186" rx="72" ry="27" class="tg-ring"/>
+
+        <!-- 안내 -->
+        <path d="M470 122 C 520 128, 545 142, 552 156" class="s-arrow" marker-end="url(#ah3)"/>
         <defs>
           <marker id="ah3" viewBox="0 0 10 10" refX="8" refY="5"
                   markerWidth="7" markerHeight="7" orient="auto-start-reverse">
             <path d="M 0 0 L 10 5 L 0 10 z" class="s-arrow-head"/>
           </marker>
         </defs>
-        <text x="176" y="140" class="s-callout">눌러서</text>
-
-        <!-- 켜짐 -->
-        <text x="256" y="128" class="tg-cap">이렇게 (켜짐)</text>
-        <rect x="256" y="138" width="46" height="24" rx="12" class="tg-on"/>
-        <circle cx="290" cy="150" r="9" class="tg-knob"/>
-
-        <text x="332" y="155" class="tg-ok">파란색이 되면 완료</text>
+        <text x="360" y="118" class="s-callout">여기를 눌러 파란색으로</text>
       </svg>
       <div class="figure-cap">
-        카드 <strong>오른쪽 아래</strong>의 스위치를 눌러 <strong>파란색</strong>으로 바꿔주세요.
+        카드 <strong>오른쪽 아래</strong>의 스위치를 눌러 <strong>파란색</strong>이 되면 완료입니다.
       </div>
     </div>
   </li>
